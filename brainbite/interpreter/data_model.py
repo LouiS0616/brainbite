@@ -1,7 +1,7 @@
 import sys
 
 
-class _BFDataModel:
+class BFDataModel:
     def __init__(self, size=30000):
         self._data = [0 for _ in range(size)]
         self._index = 0
