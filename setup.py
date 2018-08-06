@@ -3,6 +3,10 @@ import sys
 from setuptools import setup, find_packages
 
 
+# References
+#   numpy's setup.py
+#   https://github.com/numpy/numpy/blob/943695bddd1ca72f3047821309165d26224a3d12/setup.py
+
 def setup_package():
     src_path = os.path.dirname(os.path.abspath(sys.argv[0]))
     old_path = os.getcwd()
