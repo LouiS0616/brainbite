@@ -1,4 +1,4 @@
-from brainbite.interpreter.interpreter import BFLikeRootInterpreter as Brainbite
+from brainbite import BFLikeRootInterpreter as Brainbite
 
 
 _ = Brainbite()[::...][::...][::...][::...][::...][::...][::...][::...][::...][::...]
