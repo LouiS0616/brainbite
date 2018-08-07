@@ -9,20 +9,19 @@ _logger = getLogger(__name__)
 _dir = Path(__file__).parent
 
 
-""""
 def init_parser():
     parser = argparse.ArgumentParser()
     sub_parser = parser.add_subparsers()
 
     # sample parser
-    test_parser = sub_parser.add_parser('test')
-    test_parser.add_argument('name')
-    test_parser.set_defaults(handler=command_test)
+    sample_parser = sub_parser.add_parser('sample')
+    sample_parser.add_argument('name')
+    sample_parser.set_defaults(handler=command_sample)
 
     return parser
 
 
-def command_test(args):
+def command_sample(args):
     sample_py = _dir / f'sample/{args.name}.py'
 
     if not sample_py.is_file():
@@ -31,8 +30,7 @@ def command_test(args):
         )
         return
 
-    from brainbite.sample import fizzbuzz
-    exec(
+    print(
         sample_py.open().read()
     )
 
@@ -48,4 +46,3 @@ def main():
 
 
 main()
-"""

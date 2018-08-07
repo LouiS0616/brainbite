@@ -25,7 +25,11 @@ def setup_package():
         author_email='e1352207@outlook.jp',
         url='https://github.com/LouiS0616/brainbite',
         license=license,
-        packages=find_packages()
+        packages=find_packages(),
+
+        package_data={
+            'brainbite': ['sample/*.py']
+        }
     )
 
     try:
