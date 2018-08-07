@@ -1,4 +1,2 @@
-from brainbite import BFLikeRootInterpreter as Brainbite
-
-
-Brainbite()[...:...:...][:...][:][...:...:...][...::...]()
+from brainbite import Biter
+Biter()[...:...:...][:...][:][...:...:...][...::...]()

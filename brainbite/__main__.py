@@ -9,6 +9,7 @@ _logger = getLogger(__name__)
 _dir = Path(__file__).parent
 
 
+""""
 def init_parser():
     parser = argparse.ArgumentParser()
     sub_parser = parser.add_subparsers()
@@ -30,6 +31,7 @@ def command_test(args):
         )
         return
 
+    from brainbite.sample import fizzbuzz
     exec(
         sample_py.open().read()
     )
@@ -46,3 +48,4 @@ def main():
 
 
 main()
+"""
