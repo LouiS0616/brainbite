@@ -29,7 +29,7 @@ def setup_package():
 
         package_data={
             'brainbite': ['sample/*.py'],
-            'brainbite.transpiler': ['*.json']
+            'brainbite.transpiler': ['substitute.json', 'code_skeleton.json']
         }
     )
 

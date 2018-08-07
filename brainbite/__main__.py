@@ -1,6 +1,9 @@
 import argparse
 from logging import getLogger
 from pathlib import Path
+import sys
+
+from .transpiler import transpiler
 
 
 assert __name__ == '__main__'
@@ -18,6 +21,11 @@ def init_parser():
     sample_parser.add_argument('name')
     sample_parser.set_defaults(handler=command_sample)
 
+    # trans parser
+    trans_parser = sub_parser.add_parser('trans')
+    trans_parser.add_argument('path')
+    trans_parser.set_defaults(handler=command_trans)
+
     return parser
 
 
@@ -30,8 +38,27 @@ def command_sample(args):
         )
         return
 
-    print(
+    sys.stdout.write(
         sample_py.open().read()
+    )
+
+
+def command_trans(args):
+    if args.path == '-':
+        src = sys.stdin.read()
+    else:
+        path = Path(args.path)
+
+        if not path.is_file():
+            _logger.warning(
+                f'File {args.path} is not found.'
+            )
+            return
+
+        src = path.open().read()
+
+    sys.stdout.write(
+        transpiler.substitute(src)
     )
 
 
