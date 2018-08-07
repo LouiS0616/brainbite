@@ -1,1 +1,1 @@
-from .biter import BFLikeRootInterpreter
+from .biter import Biter

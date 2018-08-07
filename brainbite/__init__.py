@@ -1,2 +1,3 @@
-from .biter import BFLikeRootInterpreter as Biter
-from .sample import *
+from brainbite.biter.biter import Biter
+
+__all__ = ['Biter']

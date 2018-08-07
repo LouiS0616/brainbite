@@ -53,7 +53,7 @@ class _BFLikeInterpreter:
         return self
 
 
-class BFLikeRootInterpreter(_BFLikeInterpreter):
+class _BFLikeRootInterpreter(_BFLikeInterpreter):
     def __init__(self):
         super().__init__(parent=None)
         self._model = Model()
@@ -79,3 +79,6 @@ class _BFLikeInnerInterpreter(_BFLikeInterpreter):
 
             for operation in op_list:
                 operation(model)
+
+
+Biter = _BFLikeRootInterpreter
