@@ -2,6 +2,10 @@ from .data_model import BFDataModel as Model
 
 
 class _BFLikeInterpreter:
+    """
+    This class should be considered as abstract one.
+    """
+
     def __init__(self, parent):
         self._parent = parent
         self._op_list = []
@@ -54,6 +58,11 @@ class _BFLikeInterpreter:
 
 
 class _BFLikeRootInterpreter(_BFLikeInterpreter):
+    """
+    This class handles whole of program.
+    So this must be instantiated just one time, no more no less.
+    """
+
     def __init__(self):
         super().__init__(parent=None)
         self._model = Model()
@@ -67,6 +76,10 @@ class _BFLikeRootInterpreter(_BFLikeInterpreter):
 
 
 class _BFLikeInnerInterpreter(_BFLikeInterpreter):
+    """
+    This class handles part of program what is located between '[' and ']'.
+    """
+
     def __call__(self, model):
         conditional_skip, *op_list, unconditional_jump = self._op_list
 

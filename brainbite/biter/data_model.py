@@ -2,6 +2,10 @@ import sys
 
 
 class BFDataModel:
+    """
+    This holds cells what behaves as the Turing Machine's tape.
+    """
+
     def __init__(self, size=30000):
         self._data = [0 for _ in range(size)]
         self._index = 0
@@ -23,27 +27,35 @@ class BFDataModel:
         self._data[self._index] = value
 
     def increment_pointer(self):
+        """This correspond to operation '>'."""
         self.pointer += 1
 
     def decrement_pointer(self):
+        """This correspond to operation '<'."""
         self.pointer -= 1
 
     def increment_pointee(self):
+        """This correspond to operation '+'."""
         self.pointee += 1
 
     def decrement_pointee(self):
+        """This correspond to operation '-'."""
         self.pointee -= 1
 
     def conditional_skip(self):
+        """This correspond to operation '['."""
         return self.pointee == 0
 
     def unconditional_jump(self):
+        """This correspond to operation ']'."""
         pass
 
     def print_pointee(self):
-        print(
-            chr(self.pointee), end=''
+        """This correspond to operation '.'."""
+        sys.stdout.write(
+            chr(self.pointee)
         )
 
     def input_to_pointee(self):
+        """This correspond to operation ','."""
         self.pointee = ord(sys.stdin.read(1))
