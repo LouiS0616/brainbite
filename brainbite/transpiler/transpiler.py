@@ -22,11 +22,11 @@ def substitute(src):
     )
 
     head = '\n'.join(_code_skeleton['head'])
+    body = '\n'.join(_code_skeleton['body']).format(code=raw_body)
 
     placeholder = '_'
     body = f'\n{placeholder} = {placeholder}'.join(
-        filter(None, re.split(r'(.{,70}])', raw_body))
+        filter(None, re.split(r'(.{,68}]\(\))|(.{,70}])', body))
     )
-    body = '\n'.join(_code_skeleton['body']).format(code=body)
 
     return f'{head}\n\n{placeholder} = {body}\n'
