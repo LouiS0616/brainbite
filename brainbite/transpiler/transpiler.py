@@ -26,7 +26,7 @@ def substitute(src):
 
     placeholder = '_'
     body = f'\n{placeholder} = {placeholder}'.join(
-        filter(None, re.split(r'(.{,68}]\(\))|(.{,70}])', body))
+        filter(None, re.split(r'(.{,70}[])])', body))
     )
 
     return f'{head}\n\n{placeholder} = {body}\n'
