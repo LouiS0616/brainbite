@@ -3,7 +3,7 @@ from logging import getLogger
 from pathlib import Path
 import sys
 
-from .transpiler import transpiler
+from brainbite.transpiler import transpiler
 
 
 assert __name__ == '__main__'
@@ -17,19 +17,36 @@ def init_parser():
     sub_parser = parser.add_subparsers()
 
     # sample parser
-    sample_parser = sub_parser.add_parser('sample')
-    sample_parser.add_argument('name')
+    sample_parser = sub_parser.add_parser(
+        'sample',
+        help='you can get some prepared samples. to list up sample, specify -.'
+    )
+    sample_parser.add_argument(
+        'name', help='sample you want to get.'
+    )
     sample_parser.set_defaults(handler=command_sample)
 
     # trans parser
-    trans_parser = sub_parser.add_parser('trans')
-    trans_parser.add_argument('path')
+    trans_parser = sub_parser.add_parser(
+        'trans', help='transpile brainfuck code to python one.'
+    )
+    trans_parser.add_argument(
+        'path', help='brainfuck code path what you want to translate.'
+    )
     trans_parser.set_defaults(handler=command_trans)
 
     return parser
 
 
 def command_sample(args):
+    if args.name == '-':
+        for sample_py in (_dir / 'sample').glob('*.py'):
+            print(
+                sample_py.stem
+            )
+        return
+
+    #
     sample_py = _dir / f'sample/{args.name}.py'
 
     if not sample_py.is_file():
