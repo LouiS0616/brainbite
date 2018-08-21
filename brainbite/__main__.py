@@ -44,23 +44,23 @@ def init_parser():
 
 def command_sample(args):
     if args.name == '-':
-        for sample_py in (_dir / 'sample').glob('*.py'):
+        for sample_bf in (_dir / 'sample').glob('*.bf'):
             print(
-                sample_py.stem
+                sample_bf.stem
             )
         return
 
     #
-    sample_py = _dir / f'sample/{args.name}.py'
+    sample_bf = _dir / f'sample/{args.name}.bf'
 
-    if not sample_py.is_file():
+    if not sample_bf.is_file():
         _logger.warning(
             f'Sample {args.name} is not prepared.'
         )
         return
 
     sys.stdout.write(
-        sample_py.open().read()
+        sample_bf.open().read()
     )
 
 
