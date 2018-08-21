@@ -28,7 +28,7 @@ def setup_package():
         packages=find_packages(),
 
         package_data={
-            'brainbite': ['sample/*.py'],
+            'brainbite': ['sample/*.bf'],
             'brainbite.transpiler': ['substitute.json', 'code_skeleton.json']
         }
     )
