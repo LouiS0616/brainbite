@@ -42,7 +42,7 @@ class BFDataModel:
         """This corresponds to operation '-'."""
         self.pointee -= 1
 
-    def conditional_skip(self):
+    def conditional_skip(self) -> bool:
         """This corresponds to operation '['."""
         return self.pointee == 0
 
