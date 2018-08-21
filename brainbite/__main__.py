@@ -20,6 +20,7 @@ def init_parser():
     parser = argparse.ArgumentParser()
     sub_parser = parser.add_subparsers()
 
+    #
     # sample parser
     sample_parser = sub_parser.add_parser(
         'sample',
@@ -28,8 +29,14 @@ def init_parser():
     sample_parser.add_argument(
         'name', help='sample you want to get.'
     )
+    sample_parser.add_argument(
+        'lang', help='specify lang whether python or brainfuck.',
+        nargs='?', default='python',
+        choices=['py', 'python', 'bf', 'brainfuck']
+    )
     sample_parser.set_defaults(handler=command_sample)
 
+    #
     # trans parser
     trans_parser = sub_parser.add_parser(
         'trans', help='transpile brainfuck code to python one.'
@@ -59,9 +66,15 @@ def command_sample(args):
         )
         return
 
-    sys.stdout.write(
-        sample_bf.open().read()
-    )
+    bf_code = sample_bf.open().read()
+
+    #
+    if args.lang in ('bf', 'brainfuck'):
+        sys.stdout.write(bf_code)
+    else:
+        sys.stdout.write(
+            transpiler.substitute(bf_code)
+        )
 
 
 def command_trans(args):
