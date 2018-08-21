@@ -6,6 +6,10 @@ import sys
 from brainbite.transpiler import transpiler
 
 
+# References
+#   Qiita - Pythonのargparseでサブコマンドを実現する
+#   https://qiita.com/oohira/items/308bbd33a77200a35a3d
+
 assert __name__ == '__main__'
 
 _logger = getLogger(__name__)
@@ -31,7 +35,7 @@ def init_parser():
         'trans', help='transpile brainfuck code to python one.'
     )
     trans_parser.add_argument(
-        'path', help='brainfuck code path what you want to translate.'
+        'path', help='brainfuck code path what you want to translate. to input from stdin, specify -.'
     )
     trans_parser.set_defaults(handler=command_trans)
 
