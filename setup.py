@@ -24,7 +24,7 @@ def setup_package():
         author='LouiSakaki',
         author_email='e1352207@outlook.jp',
         url='https://github.com/LouiS0616/brainbite',
-        license=license,
+        license='MIT',
         packages=find_packages(),
 
         package_data={
