@@ -26,6 +26,7 @@ _ = _[:...:...][:][...:...][...:][:][...:...][:][::...][::...][::...][:]
 _ = _[...:][...:][...:][...:][...:][...:][:][...:][...:][...:][...:][...:]
 _ = _[...:][...:][...:][:][:...:...][:...:...][::...][:][:...:...][::...]
 _ = _[::...][:]()
+
 ```
 
 To get this code, run below command.
@@ -43,7 +44,10 @@ $ python -m brainbite trans fizzbuzz.bf
 For more information, view `$ python -m brainbite --help`.
 
 ## Install
-
+This module is registered at PyPI. [PyPI - brainbite](https://pypi.org/project/brainbite/)
+```bash
+$ pip install brainbite
+```
 
 ## License
 [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
