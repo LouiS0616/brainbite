@@ -18,7 +18,7 @@ def setup_package():
 
     metadata = dict(
         name='brainbite',
-        version='0.1.0',
+        version='1.0.0',
         description='A python bit my brain.',
         long_description=readme,
         author='LouiSakaki',
