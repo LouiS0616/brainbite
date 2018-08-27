@@ -9,34 +9,44 @@ This package enables to write brainfuck-like code in python **legal** grammar.
 This package also provides transpilation function from bf code to python one.
 
 ## Demo
-**Transpile**
+Though this code is strange, outputs *"Hello World!"* on stdout correctly. 
+
+```python
+from brainbite import Biter
+
+_ = Biter()[::...][::...][::...][::...][::...][::...][::...][::...][:...]
+_ = _[:...:...][::...][::...][::...][::...][:...][:...:...][::...][::...]
+_ = _[:...:...][::...][::...][::...][:...:...][::...][::...][::...]
+_ = _[:...:...][::...][...:...][...:...][...:...][...:...][...:][...::...]
+_ = _[:...:...][::...][:...:...][::...][:...:...][...:][:...:...][:...:...]
+_ = _[::...][:...][...:...][...::...][...:...][...:][...::...][:...:...]
+_ = _[:...:...][:][:...:...][...:][...:][...:][:][::...][::...][::...]
+_ = _[::...][::...][::...][::...][:][:][::...][::...][::...][:][:...:...]
+_ = _[:...:...][:][...:...][...:][:][...:...][:][::...][::...][::...][:]
+_ = _[...:][...:][...:][...:][...:][...:][:][...:][...:][...:][...:][...:]
+_ = _[...:][...:][...:][:][:...:...][:...:...][::...][:][:...:...][::...]
+_ = _[::...][:]()
+```
+
+To get this code, run below command.
+
+```bash
+$ python -m brainbite sample hello_world
+```
+
+**Transpile** \
+This module also works as transpiler.
+```bash
+$ python -m brainbite trans fizzbuzz.bf
+```
+
+For more information, view `$ python -m brainbite --help`.
+
+## Install
 
 
-<!---
-    Name
-    ====
-    
-    Overview
-    
-    ## Description
-    
-    ## Demo
-    
-    ## VS. 
-    
-    ## Requirement
-    
-    ## Usage
-    
-    ## Install
-    
-    ## Contribution
-    
-    ## Licence
-    
-    [MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
-    
-    ## Author
-    
-    [tcnksm](https://github.com/tcnksm)
---->
+## License
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+
+## Author
+[LouiS0616](https://github.com/LouiS0616)
