@@ -18,9 +18,11 @@ def setup_package():
 
     metadata = dict(
         name='brainbite',
-        version='1.0.0',
+        version='1.0.1',
         description='A python bit my brain.',
         long_description=readme,
+        long_description_content_type='text/markdown',
+        python_requires='>=3.6',
         author='LouiSakaki',
         author_email='e1352207@outlook.jp',
         url='https://github.com/LouiS0616/brainbite',

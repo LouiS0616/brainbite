@@ -50,7 +50,7 @@ $ pip install brainbite
 ```
 
 ## License
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+[MIT](https://github.com/LouiS0616/brainbite/blob/master/LICENSE)
 
 ## Author
 [LouiS0616](https://github.com/LouiS0616)
