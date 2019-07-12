@@ -34,6 +34,10 @@ def init_parser():
         nargs='?', default='python',
         choices=['py', 'python', 'bf', 'brainfuck']
     )
+    sample_parser.add_argument(
+        '--out', type=argparse.FileType('w', encoding='utf-8'),
+        help='file for output.'
+    )
     sample_parser.set_defaults(handler=command_sample)
 
     #
@@ -59,6 +63,7 @@ def command_sample(args):
 
     #
     sample_bf = _dir / f'sample/{args.name}.bf'
+    out = args.out or sys.stdout
 
     if not sample_bf.is_file():
         _logger.warning(
@@ -70,9 +75,9 @@ def command_sample(args):
 
     #
     if args.lang in ('bf', 'brainfuck'):
-        sys.stdout.write(bf_code)
+        out.write(bf_code)
     else:
-        sys.stdout.write(
+        out.write(
             transpiler.substitute(bf_code)
         )
 
